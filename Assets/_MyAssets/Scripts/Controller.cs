@@ -17,7 +17,8 @@ internal sealed class Controller : ITickable, IDisposable
 
     public void Tick()
     {
-        if (characterTransforms == null || characterStatuses == null) return;
+        if (characterTransforms.playerTransform == null) return;
+        if (characterTransforms.enemyTransform == null) return;
 
         Vector3 p = characterTransforms.playerTransform.position;
         Vector3 e = characterTransforms.enemyTransform.position;
